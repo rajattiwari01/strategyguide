@@ -1,0 +1,3659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajat Tiwari | Career Pivot Strategy Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-tertiary: #1a1a2e;
+            --bg-card: #16162a;
+            --accent-primary: #6c5ce7;
+            --accent-secondary: #a29bfe;
+            --accent-gradient: linear-gradient(135deg, #6c5ce7, #a29bfe, #fd79a8);
+            --accent-warm: #fd79a8;
+            --accent-gold: #ffeaa7;
+            --accent-green: #00b894;
+            --accent-blue: #0984e3;
+            --accent-orange: #e17055;
+            --text-primary: #ffffff;
+            --text-secondary: #b2b2d0;
+            --text-muted: #6c6c8a;
+            --border-color: #2a2a4a;
+            --shadow-glow: 0 0 40px rgba(108, 92, 231, 0.15);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.08;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .bg-orb:nth-child(1) {
+            width: 600px;
+            height: 600px;
+            background: var(--accent-primary);
+            top: -200px;
+            right: -200px;
+            animation-delay: 0s;
+        }
+
+        .bg-orb:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-warm);
+            bottom: -100px;
+            left: -100px;
+            animation-delay: -7s;
+        }
+
+        .bg-orb:nth-child(3) {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-blue);
+            top: 50%;
+            left: 50%;
+            animation-delay: -14s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -50px) scale(1.1); }
+            50% { transform: translate(-30px, 30px) scale(0.95); }
+            75% { transform: translate(40px, 20px) scale(1.05); }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 2rem;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            color: white;
+        }
+
+        .nav-brand-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-brand-text span {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 10px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-primary);
+            background: rgba(108, 92, 231, 0.15);
+        }
+
+        .nav-link.active {
+            color: var(--accent-secondary);
+        }
+
+        .nav-streak {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(253, 121, 168, 0.1);
+            border: 1px solid rgba(253, 121, 168, 0.2);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--accent-warm);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-secondary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* Main Content */
+        .main-content {
+            position: relative;
+            z-index: 1;
+            padding-top: 70px;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: var(--accent-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-secondary);
+        }
+
+        .hero-stat .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(108, 92, 231, 0.3);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Dashboard Page */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-ring-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .progress-ring {
+            position: relative;
+            width: 140px;
+            height: 140px;
+        }
+
+        .progress-ring svg {
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring .bg {
+            fill: none;
+            stroke: var(--border-color);
+            stroke-width: 8;
+        }
+
+        .progress-ring .progress {
+            fill: none;
+            stroke: url(#gradient);
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s ease;
+        }
+
+        .progress-ring .center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .progress-ring .percentage {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .progress-ring .sublabel {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .progress-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-details p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .milestone-list {
+            list-style: none;
+        }
+
+        .milestone-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .milestone-list .check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .milestone-list .check.done {
+            background: rgba(0, 184, 148, 0.2);
+            color: var(--accent-green);
+        }
+
+        .milestone-list .check.pending {
+            background: rgba(108, 92, 231, 0.2);
+            color: var(--accent-primary);
+        }
+
+        .milestone-list .check.locked {
+            background: rgba(108, 108, 138, 0.2);
+            color: var(--text-muted);
+        }
+
+        /* Timer Widget */
+        .timer-widget {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .timer-display {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            letter-spacing: 4px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timer-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .timer-mode-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 1.5rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 4px;
+        }
+
+        .timer-mode-tab {
+            padding: 8px 16px;
+            border-radius: 10px;
+            border: none;
+            background: none;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .timer-mode-tab.active {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .timer-sessions {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 1rem;
+        }
+
+        .timer-session-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border-color);
+        }
+
+        .timer-session-dot.completed {
+            background: var(--accent-green);
+        }
+
+        .timer-session-dot.current {
+            background: var(--accent-primary);
+            animation: pulse 2s infinite;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 10px 24px;
+            border-radius: 12px;
+            border: none;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--text-primary);
+        }
+
+        .btn-danger {
+            background: rgba(225, 112, 85, 0.15);
+            color: var(--accent-orange);
+            border: 1px solid rgba(225, 112, 85, 0.3);
+        }
+
+        .btn-success {
+            background: rgba(0, 184, 148, 0.15);
+            color: var(--accent-green);
+            border: 1px solid rgba(0, 184, 148, 0.3);
+        }
+
+        .btn-sm {
+            padding: 6px 14px;
+            font-size: 0.78rem;
+        }
+
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-icon:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-secondary);
+        }
+
+        /* Roadmap */
+        .roadmap-timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .roadmap-phase {
+            position: relative;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+
+        .roadmap-phase:hover {
+            border-color: rgba(108, 92, 231, 0.3);
+        }
+
+        .roadmap-phase::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 1.5rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 3px solid;
+        }
+
+        .roadmap-phase.completed::before {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .roadmap-phase.current::before {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            animation: pulse 2s infinite;
+        }
+
+        .roadmap-phase.upcoming::before {
+            background: var(--bg-primary);
+            border-color: var(--text-muted);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .phase-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phase-badge.completed { background: rgba(0, 184, 148, 0.15); color: var(--accent-green); }
+        .phase-badge.in-progress { background: rgba(108, 92, 231, 0.15); color: var(--accent-secondary); }
+        .phase-badge.upcoming { background: rgba(108, 108, 138, 0.15); color: var(--text-muted); }
+
+        .phase-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .phase-tasks {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .phase-task {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .phase-task:hover {
+            background: rgba(108, 92, 231, 0.1);
+        }
+
+        .phase-task input[type="checkbox"] {
+            accent-color: var(--accent-primary);
+        }
+
+        .phase-progress {
+            margin-top: 1rem;
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .phase-progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: var(--accent-gradient);
+            transition: width 0.5s ease;
+        }
+
+        /* Task Tracker */
+        .task-input-area {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .task-input-area input, .task-input-area select {
+            flex: 1;
+            padding: 12px 16px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .task-input-area input:focus, .task-input-area select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .task-input-area select {
+            flex: 0.5;
+        }
+
+        .task-filters {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .task-filter {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: none;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .task-filter.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .task-item:hover {
+            border-color: rgba(108, 92, 231, 0.3);
+        }
+
+        .task-item.completed {
+            opacity: 0.5;
+        }
+
+        .task-item.completed .task-text {
+            text-decoration: line-through;
+        }
+
+        .task-checkbox {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .task-checkbox.checked {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .task-text {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .task-priority {
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .task-priority.high { background: rgba(225, 112, 85, 0.15); color: var(--accent-orange); }
+        .task-priority.medium { background: rgba(255, 234, 167, 0.15); color: var(--accent-gold); }
+        .task-priority.low { background: rgba(0, 184, 148, 0.15); color: var(--accent-green); }
+
+        .task-delete {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 4px;
+            transition: color 0.3s;
+        }
+
+        .task-delete:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Quiz Section */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-progress-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--border-color);
+            border-radius: 6px;
+            margin: 0 1.5rem;
+            overflow: hidden;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            background: var(--accent-gradient);
+            border-radius: 6px;
+            transition: width 0.5s;
+        }
+
+        .quiz-question-num {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .quiz-score {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            white-space: nowrap;
+        }
+
+        .quiz-category-select {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-category-card {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quiz-category-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .quiz-category-card.selected {
+            border-color: var(--accent-primary);
+            background: rgba(108, 92, 231, 0.1);
+        }
+
+        .quiz-category-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-category-card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .quiz-category-card p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .quiz-question-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .quiz-question-type {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(108, 92, 231, 0.15);
+            color: var(--accent-secondary);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-question-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--accent-primary);
+            background: rgba(108, 92, 231, 0.05);
+        }
+
+        .quiz-option.selected {
+            border-color: var(--accent-primary);
+            background: rgba(108, 92, 231, 0.1);
+        }
+
+        .quiz-option.correct {
+            border-color: var(--accent-green);
+            background: rgba(0, 184, 148, 0.1);
+        }
+
+        .quiz-option.wrong {
+            border-color: var(--accent-orange);
+            background: rgba(225, 112, 85, 0.1);
+        }
+
+        .quiz-option-letter {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .quiz-explanation {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(0, 184, 148, 0.05);
+            border: 1px solid rgba(0, 184, 148, 0.2);
+            border-radius: 14px;
+            display: none;
+        }
+
+        .quiz-explanation.show {
+            display: block;
+        }
+
+        .quiz-explanation h4 {
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .quiz-explanation p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .quiz-results {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .quiz-results .score-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: 4px solid;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+
+        .quiz-results .score-circle .score {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        /* Case Study */
+        .case-study-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .case-study-card:hover {
+            border-color: rgba(108, 92, 231, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .case-study-header {
+            padding: 1.5rem;
+            background: rgba(108, 92, 231, 0.05);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .case-study-type {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-body {
+            padding: 1.5rem;
+        }
+
+        .case-study-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .case-study-meta span {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Scenario Workspace */
+        .scenario-workspace {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .scenario-brief {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .scenario-brief h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenario-brief .context {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .scenario-data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .scenario-data-table th, .scenario-data-table td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+
+        .scenario-data-table th {
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .scenario-answer-area {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .scenario-answer-area h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenario-textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 16px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .scenario-textarea:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .framework-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 1rem 0;
+        }
+
+        .framework-tag {
+            padding: 4px 12px;
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid rgba(108, 92, 231, 0.2);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--accent-secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .framework-tag:hover {
+            background: rgba(108, 92, 231, 0.2);
+        }
+
+        /* Resources */
+        .resource-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .resource-card:hover {
+            border-color: rgba(108, 92, 231, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .resource-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .resource-card .author {
+            font-size: 0.8rem;
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-card p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .resource-tags {
+            display: flex;
+            gap: 6px;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .resource-tag {
+            padding: 3px 8px;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Mock Interview */
+        .interview-panel {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 1.5rem;
+        }
+
+        .interview-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .interview-question-btn {
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+            font-size: 0.85rem;
+        }
+
+        .interview-question-btn:hover, .interview-question-btn.active {
+            border-color: var(--accent-primary);
+            color: var(--text-primary);
+        }
+
+        .interview-question-btn .q-num {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .interview-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        /* Feedback Panel */
+        .feedback-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .feedback-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feedback-metric {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+        }
+
+        .feedback-metric .metric-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .feedback-metric .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .feedback-message {
+            padding: 1.5rem;
+            background: rgba(108, 92, 231, 0.05);
+            border: 1px solid rgba(108, 92, 231, 0.15);
+            border-radius: 12px;
+        }
+
+        .feedback-message h4 {
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .feedback-message p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Transition Case Studies */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .transition-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .transition-card:hover {
+            border-color: rgba(108, 92, 231, 0.3);
+        }
+
+        .transition-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .transition-path {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        .transition-path .from {
+            padding: 4px 10px;
+            background: rgba(225, 112, 85, 0.1);
+            border-radius: 6px;
+            color: var(--accent-orange);
+        }
+
+        .transition-path .arrow {
+            color: var(--text-muted);
+        }
+
+        .transition-path .to {
+            padding: 4px 10px;
+            background: rgba(0, 184, 148, 0.1);
+            border-radius: 6px;
+            color: var(--accent-green);
+        }
+
+        .transition-lessons {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .transition-lessons li {
+            padding: 6px 0;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .transition-lessons li::before {
+            content: '→';
+            color: var(--accent-primary);
+            flex-shrink: 0;
+        }
+
+        /* Networking Tips */
+        .tip-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .tip-card {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            transition: all 0.3s;
+        }
+
+        .tip-card:hover {
+            border-color: rgba(108, 92, 231, 0.3);
+        }
+
+        .tip-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-card p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Weekly Scenario */
+        .week-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(253, 121, 168, 0.1);
+            border: 1px solid rgba(253, 121, 168, 0.2);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--accent-warm);
+            margin-bottom: 1rem;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 1.5rem;
+            background: var(--bg-tertiary);
+            padding: 4px;
+            border-radius: 14px;
+            width: fit-content;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: none;
+            background: none;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Daily Checklist */
+        .daily-checklist {
+            padding: 1.5rem;
+        }
+
+        .checklist-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(42, 42, 74, 0.5);
+            cursor: pointer;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .checklist-circle.checked {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            color: white;
+            font-size: 0.7rem;
+        }
+
+        .checklist-item span {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .checklist-item.done span {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-green);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 9999;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            font-size: 1.2rem;
+        }
+
+        .toast-text {
+            font-size: 0.85rem;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .dashboard-grid { grid-template-columns: 1fr; }
+            .scenario-workspace { grid-template-columns: 1fr; }
+            .interview-panel { grid-template-columns: 1fr; }
+            .case-studies-grid { grid-template-columns: 1fr; }
+            .feedback-metrics { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 15, 0.98);
+                padding: 1rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .hamburger { display: flex; }
+            .nav-streak { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .quiz-category-select { grid-template-columns: 1fr; }
+            .phase-tasks { grid-template-columns: 1fr; }
+            .task-input-area { flex-direction: column; }
+            .tip-cards { grid-template-columns: 1fr; }
+            .section { padding: 1rem; }
+            .timer-display { font-size: 2.5rem; }
+        }
+
+        /* Animations */
+        .slide-up {
+            animation: slideUp 0.6s ease forwards;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+
+        /* Weekly Countdown */
+        .countdown-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: rgba(108, 92, 231, 0.08);
+            border: 1px solid rgba(108, 92, 231, 0.15);
+            border-radius: 14px;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-bar .timer-icon {
+            font-size: 1.3rem;
+        }
+
+        .countdown-bar .countdown-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .countdown-bar .countdown-time {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: var(--accent-secondary);
+        }
+
+        /* Tab Sub-navigation */
+        .sub-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .sub-tab {
+            padding: 12px 24px;
+            border: none;
+            background: none;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .sub-tab:hover {
+            color: var(--text-secondary);
+        }
+
+        .sub-tab.active {
+            color: var(--accent-secondary);
+            border-bottom-color: var(--accent-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo">RT</div>
+                <div class="nav-brand-text">
+                    <h1>RAJAT TIWARI</h1>
+                    <span>Strategy Hub</span>
+                </div>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <button class="nav-link active" onclick="showPage('dashboard')">📊 Dashboard</button>
+                <button class="nav-link" onclick="showPage('roadmap')">🗺️ Roadmap</button>
+                <button class="nav-link" onclick="showPage('timer')">⏱️ Timer</button>
+                <button class="nav-link" onclick="showPage('tasks')">✅ Tasks</button>
+                <button class="nav-link" onclick="showPage('quiz')">🧠 Quiz</button>
+                <button class="nav-link" onclick="showPage('scenarios')">📈 Scenarios</button>
+                <button class="nav-link" onclick="showPage('resources')">📚 Resources</button>
+            </div>
+            <div class="nav-streak" id="streakDisplay">
+                🔥 <span id="streakCount">0</span> day streak
+            </div>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <!-- ===================== DASHBOARD PAGE ===================== -->
+        <div class="page active" id="page-dashboard">
+            <section class="hero">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Active Career Pivot in Progress
+                </div>
+                <h1>Your Path to<br><span class="gradient-text">VC & Consulting</span></h1>
+                <p>Program Manager → Founder's Office → Growth & Strategy<br>Your dynamic companion to landing the dream role</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="number" id="stat-completed">0</div>
+                        <div class="label">Tasks Completed</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number" id="stat-hours">0</div>
+                        <div class="label">Focus Hours</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number" id="stat-quizzes">0</div>
+                        <div class="label">Quizzes Taken</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number" id="stat-streak">0</div>
+                        <div class="label">Day Streak</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Overall Progress</h3>
+                            <span class="phase-badge in-progress">Phase 2 of 5</span>
+                        </div>
+                        <div class="progress-ring-container">
+                            <div class="progress-ring">
+                                <svg width="140" height="140">
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#6c5ce7"/>
+                                            <stop offset="100%" style="stop-color:#a29bfe"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle class="bg" cx="70" cy="70" r="60"/>
+                                    <circle class="progress" cx="70" cy="70" r="60" 
+                                        stroke-dasharray="377" stroke-dashoffset="264" id="progressCircle"/>
+                                </svg>
+                                <div class="center-text">
+                                    <div class="percentage" id="overallPercent">30%</div>
+                                    <div class="sublabel">Complete</div>
+                                </div>
+                            </div>
+                            <div class="progress-details">
+                                <h3>Phase 2: Skill Building</h3>
+                                <p>Focus on frameworks, financial modeling, and case interview prep.</p>
+                                <ul class="milestone-list">
+                                    <li><span class="check done">✓</span> Self-Assessment Complete</li>
+                                    <li><span class="check done">✓</span> Target Companies Identified</li>
+                                    <li><span class="check pending">●</span> Case Interview Framework</li>
+                                    <li><span class="check locked">○</span> Mock Interviews (0/5)</li>
+                                    <li><span class="check locked">○</span> Networking Outreach</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card daily-checklist">
+                        <div class="card-header">
+                            <h3 class="card-title">Today's Checklist</h3>
+                            <span class="checklist-date" id="todayDate"></span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleChecklist(this)">
+                            <div class="checklist-circle">✓</div>
+                            <span>30 min case study practice</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleChecklist(this)">
+                            <div class="checklist-circle">✓</div>
+                            <span>Read 1 chapter of recommended book</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleChecklist(this)">
+                            <div class="checklist-circle">✓</div>
+                            <span>Connect with 2 people on LinkedIn</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleChecklist(this)">
+                            <div class="checklist-circle">✓</div>
+                            <span>Complete 1 quiz module</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleChecklist(this)">
+                            <div class="checklist-circle">✓</div>
+                            <span>Review market trends (15 min)</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleChecklist(this)">
+                            <div class="checklist-circle">✓</div>
+                            <span>Write investment memo notes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-4 slide-up">
+                    <div class="card" onclick="showPage('timer')" style="cursor:pointer">
+                        <div class="card-icon" style="background:rgba(108,92,231,0.15)">⏱️</div>
+                        <div class="card-title">Focus Timer</div>
+                        <div class="card-desc">Pomodoro & deep work sessions to stay disciplined</div>
+                    </div>
+                    <div class="card" onclick="showPage('tasks')" style="cursor:pointer">
+                        <div class="card-icon" style="background:rgba(0,184,148,0.15)">✅</div>
+                        <div class="card-title">Task Tracker</div>
+                        <div class="card-desc">Organize and prioritize your career pivot action items</div>
+                    </div>
+                    <div class="card" onclick="showPage('quiz')" style="cursor:pointer">
+                        <div class="card-icon" style="background:rgba(253,121,168,0.15)">🧠</div>
+                        <div class="card-title">Quiz & Drills</div>
+                        <div class="card-desc">Test your knowledge on VC, consulting & strategy</div>
+                    </div>
+                    <div class="card" onclick="showPage('scenarios')" style="cursor:pointer">
+                        <div class="card-icon" style="background:rgba(255,234,167,0.15)">📈</div>
+                        <div class="card-title">Weekly Scenario</div>
+                        <div class="card-desc">Real-world strategy & investment analysis challenges</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===================== ROADMAP PAGE ===================== -->
+        <div class="page" id="page-roadmap">
+            <section class="section">
+                <div class="section-header">
+                    <h2>🗺️ Interactive Career Roadmap</h2>
+                    <p>Program Manager → VC / Top-Tier Consulting — Your personalized transition plan</p>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active" onclick="switchRoadmapTrack('vc', this)">VC Track</button>
+                    <button class="tab" onclick="switchRoadmapTrack('consulting', this)">Consulting Track</button>
+                </div>
+
+                <div class="roadmap-timeline" id="roadmap-vc">
+                    <div class="roadmap-phase completed">
+                        <div class="phase-header">
+                            <div>
+                                <span class="phase-badge completed">Completed</span>
+                                <h3 class="phase-title">Phase 1: Self-Assessment & Positioning (Weeks 1-2)</h3>
+                            </div>
+                            <span style="color:var(--accent-green)">100%</span>
+                        </div>
+                        <p class="phase-desc">Map your transferable skills from Program Management and Founder's Office to VC/consulting frameworks. Identify your unique edge.</p>
+                        <div class="phase-tasks">
+                            <label class="phase-task"><input type="checkbox" checked disabled> Skills inventory audit</label>
+                            <label class="phase-task"><input type="checkbox" checked disabled> Target 20 VC firms research</label>
+                            <label class="phase-task"><input type="checkbox" checked disabled> LinkedIn profile optimization</label>
+                            <label class="phase-task"><input type="checkbox" checked disabled> Personal narrative crafting</label>
+                        </div>
+                        <div class="phase-progress"><div class="phase-progress-fill" style="width:100%"></div></div>
+                    </div>
+
+                    <div class="roadmap-phase current">
+                        <div class="phase-header">
+                            <div>
+                                <span class="phase-badge in-progress">In Progress</span>
+                                <h3 class="phase-title">Phase 2: Knowledge & Skill Building (Weeks 3-8)</h3>
+                            </div>
+                            <span style="color:var(--accent-secondary)">40%</span>
+                        </div>
+                        <p class="phase-desc">Build deep expertise in venture capital deal flow, market sizing, financial modeling, and consulting case frameworks.</p>
+                        <div class="phase-tasks">
+                            <label class="phase-task"><input type="checkbox" checked onchange="updatePhaseProgress(this)"> Market sizing frameworks</label>
+                            <label class="phase-task"><input type="checkbox" checked onchange="updatePhaseProgress(this)"> Financial modeling basics</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> VC deal memo writing</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Case interview frameworks</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Industry deep dives (SaaS, Fintech)</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Read 3 recommended books</label>
+                        </div>
+                        <div class="phase-progress"><div class="phase-progress-fill" style="width:40%"></div></div>
+                    </div>
+
+                    <div class="roadmap-phase upcoming">
+                        <div class="phase-header">
+                            <div>
+                                <span class="phase-badge upcoming">Upcoming</span>
+                                <h3 class="phase-title">Phase 3: Network Activation (Weeks 9-12)</h3>
+                            </div>
+                            <span style="color:var(--text-muted)">0%</span>
+                        </div>
+                        <p class="phase-desc">Strategically build relationships with VCs, consultants, and operators. Attend events and secure informational interviews.</p>
+                        <div class="phase-tasks">
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> 30 targeted LinkedIn outreach</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> 10 informational interviews</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Attend 3 industry events</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Join VC/consulting communities</label>
+                        </div>
+                        <div class="phase-progress"><div class="phase-progress-fill" style="width:0%"></div></div>
+                    </div>
+
+                    <div class="roadmap-phase upcoming">
+                        <div class="phase-header">
+                            <div>
+                                <span class="phase-badge upcoming">Upcoming</span>
+                                <h3 class="phase-title">Phase 4: Interview Mastery (Weeks 13-16)</h3>
+                            </div>
+                            <span style="color:var(--text-muted)">0%</span>
+                        </div>
+                        <p class="phase-desc">Master the interview process with mock cases, investment theses, and behavioral storytelling.</p>
+                        <div class="phase-tasks">
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> 10 mock case interviews</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Prepare 3 investment theses</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Behavioral story bank (10 stories)</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Practice market sizing (20 problems)</label>
+                        </div>
+                        <div class="phase-progress"><div class="phase-progress-fill" style="width:0%"></div></div>
+                    </div>
+
+                    <div class="roadmap-phase upcoming">
+                        <div class="phase-header">
+                            <div>
+                                <span class="phase-badge upcoming">Upcoming</span>
+                                <h3 class="phase-title">Phase 5: Application & Offer (Weeks 17-20)</h3>
+                            </div>
+                            <span style="color:var(--text-muted)">0%</span>
+                        </div>
+                        <p class="phase-desc">Execute your application strategy, nail interviews, and negotiate your offer at your dream firm.</p>
+                        <div class="phase-tasks">
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Apply to 15 target firms</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Complete all interview rounds</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Negotiate compensation</label>
+                            <label class="phase-task"><input type="checkbox" onchange="updatePhaseProgress(this)"> Accept offer 🎉</label>
+                        </div>
+                        <div class="phase-progress"><div class="phase-progress-fill" style="width:0%"></div></div>
+                    </div>
+                </div>
+
+                <!-- Consulting Track (hidden by default) -->
+                <div class="roadmap-timeline" id="roadmap-consulting" style="display:none">
+                    <div class="roadmap-phase completed">
+                        <div class="phase-header">
+                            <div>
+                                <span class="phase-badge completed">Completed</span>
+                                <h3 class="phase-title">Phase 1: Foundation & Positioning (Weeks 1-3)</h3>
+                            </div>
+                        </div>
+                        <p class="phase-desc">Leverage your program management and strategy experience to build your consulting narrative.</p>
+                        <div class="phase-tasks">
+                            <label class="phase-task"><input type="checkbox" checked disabled> Map PM skills → consulting frameworks</label>
+                            <label class="phase-task"><input type="checkbox" checked disabled> Target firm list (MBB + boutique)</label>
+                            <label class="phase-task"><input type="checkbox" checked disabled> Resume tailored for consulting</label>
+                            <label class="phase-task"><input type="checkbox" checked disabled> Understand recruiting timelines</label>
+                        </div>
+                        <div class="phase-progress"><div class="phase-progress-fill" style="width:100%"></div></div>
+                    </div>
+                    <div class="roadmap-phase current">
+                        <div class="phase-header">
+                            <div>
+                                <span class="phase-badge in-progress">In Progress</span>
+                                <h3 class="phase-title">Phase 2: Case Interview Mastery (Weeks 4-10)</h3>
+                            </div>
+                        </div>
+                        <p class="phase-desc">Master profitability, market entry, M&A, and operations case types used by McKinsey, BCG, and Bain.</p>
+                        <div class="phase-tasks">
+                            <label class="phase-task"><input type="checkbox" checked> Profitability framework</label>
+                            <label class="phase-task"><input type="checkbox"> Market entry cases</label>
+                            <label class="phase-task"><input type="checkbox"> M&A valuation basics</label>
+                            <label class="phase-task"><input type="checkbox"> Operations improvement</label>
+                            <label class="phase-task"><input type="checkbox"> 20 practice cases</label>
+                            <label class="phase-task"><input type="checkbox"> Mental math drills</label>
+                        </div>
+                        <div class="phase-progress"><div class="phase-progress-fill" style="width:25%"></div></div>
+                    </div>
+                    <div class="roadmap-phase upcoming">
+                        <div class="phase-header">
+                            <div>
+                                <span class="phase-badge upcoming">Upcoming</span>
+                                <h3 class="phase-title">Phase 3: Networking & Applications (Weeks 11-16)</h3>
+                            </div>
+                        </div>
+                        <p class="phase-desc">Secure referrals, attend recruiting events, and submit applications to target firms.</p>
+                        <div class="phase-tasks">
+                            <label class="phase-task"><input type="checkbox"> Coffee chats with consultants</label>
+                            <label class="phase-task"><input type="checkbox"> Referral strategy execution</label>
+                            <label class="phase-task"><input type="checkbox"> Application essays/cover letters</label>
+                            <label class="phase-task"><input type="checkbox"> Fit interview prep</label>
+                        </div>
+                        <div class="phase-progress"><div class="phase-progress-fill" style="width:0%"></div></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===================== TIMER PAGE ===================== -->
+        <div class="page" id="page-timer">
+            <section class="section">
+                <div class="section-header">
+                    <h2>⏱️ Focus Timer</h2>
+                    <p>Stay disciplined with Pomodoro sessions built for deep work</p>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card timer-widget">
+                        <div class="timer-mode-tabs">
+                            <button class="timer-mode-tab active" onclick="setTimerMode(25, this)">Focus (25m)</button>
+                            <button class="timer-mode-tab" onclick="setTimerMode(50, this)">Deep Work (50m)</button>
+                            <button class="timer-mode-tab" onclick="setTimerMode(5, this)">Break (5m)</button>
+                            <button class="timer-mode-tab" onclick="setTimerMode(15, this)">Long Break (15m)</button>
+                        </div>
+                        <div class="timer-label" id="timerLabel">FOCUS SESSION</div>
+                        <div class="timer-display" id="timerDisplay">25:00</div>
+                        <div class="timer-sessions">
+                            <div class="timer-session-dot current" id="session-1"></div>
+                            <div class="timer-session-dot" id="session-2"></div>
+                            <div class="timer-session-dot" id="session-3"></div>
+                            <div class="timer-session-dot" id="session-4"></div>
+                        </div>
+                        <div class="timer-controls">
+                            <button class="btn btn-primary" id="timerStartBtn" onclick="toggleTimer()">▶ Start</button>
+                            <button class="btn btn-secondary" onclick="resetTimer()">↺ Reset</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card" style="margin-bottom:1.5rem">
+                            <div class="card-header">
+                                <h3 class="card-title">Session Log</h3>
+                                <span style="font-size:0.8rem;color:var(--text-muted)" id="totalFocusTime">Total: 0h 0m</span>
+                            </div>
+                            <div id="sessionLog" style="max-height:200px;overflow-y:auto">
+                                <p style="color:var(--text-muted);font-size:0.85rem;text-align:center;padding:2rem">
+                                    No sessions yet. Start your first focus session!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Focus Tips</h3>
+                            </div>
+                            <div style="font-size:0.85rem;color:var(--text-secondary);line-height:1.7">
+                                <p>🎯 <strong>Set a single objective</strong> before starting each session</p>
+                                <p style="margin-top:8px">📱 <strong>Phone away</strong> — out of sight, out of mind</p>
+                                <p style="margin-top:8px">🧊 <strong>2-minute rule:</strong> If distracted, wait 2 min before acting</p>
+                                <p style="margin-top:8px">📝 <strong>After each session:</strong> Write one key takeaway</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===================== TASKS PAGE ===================== -->
+        <div class="page" id="page-tasks">
+            <section class="section">
+                <div class="section-header">
+                    <h2>✅ Task Tracker</h2>
+                    <p>Organize your career pivot action items by priority and category</p>
+                </div>
+
+                <div class="task-input-area">
+                    <input type="text" id="taskInput" placeholder="Add a new task..." onkeypress="if(event.key==='Enter')addTask()">
+                    <select id="taskPriority">
+                        <option value="high">🔴 High</option>
+                        <option value="medium" selected>🟡 Medium</option>
+                        <option value="low">🟢 Low</option>
+                    </select>
+                    <select id="taskCategory">
+                        <option value="learning">📖 Learning</option>
+                        <option value="networking">🤝 Networking</option>
+                        <option value="practice">🎯 Practice</option>
+                        <option value="application">📋 Application</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="addTask()">+ Add</button>
+                </div>
+
+                <div class="task-filters">
+                    <button class="task-filter active" onclick="filterTasks('all', this)">All</button>
+                    <button class="task-filter" onclick="filterTasks('learning', this)">📖 Learning</button>
+                    <button class="task-filter" onclick="filterTasks('networking', this)">🤝 Networking</button>
+                    <button class="task-filter" onclick="filterTasks('practice', this)">🎯 Practice</button>
+                    <button class="task-filter" onclick="filterTasks('application', this)">📋 Application</button>
+                    <button class="task-filter" onclick="filterTasks('completed', this)">✅ Completed</button>
+                </div>
+
+                <div class="task-list" id="taskList">
+                    <!-- Tasks will be rendered here -->
+                </div>
+
+                <div style="margin-top:1.5rem;text-align:center">
+                    <span style="font-size:0.85rem;color:var(--text-muted)" id="taskStats">0 tasks · 0 completed</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===================== QUIZ PAGE ===================== -->
+        <div class="page" id="page-quiz">
+            <section class="section">
+                <div class="section-header">
+                    <h2>🧠 Quiz & Problem Solving</h2>
+                    <p>Test your knowledge across VC, consulting, strategy and investment analysis</p>
+                </div>
+
+                <div class="quiz-container">
+                    <!-- Quiz Category Selection -->
+                    <div id="quizCategorySelection">
+                        <div class="quiz-category-select">
+                            <div class="quiz-category-card" onclick="startQuiz('vc')">
+                                <div class="icon">💰</div>
+                                <h3>Venture Capital</h3>
+                                <p>Deal flow, term sheets, valuations</p>
+                            </div>
+                            <div class="quiz-category-card" onclick="startQuiz('consulting')">
+                                <div class="icon">📊</div>
+                                <h3>Consulting</h3>
+                                <p>Frameworks, case math, strategy</p>
+                            </div>
+                            <div class="quiz-category-card" onclick="startQuiz('strategy')">
+                                <div class="icon">🎯</div>
+                                <h3>Strategy & Analysis</h3>
+                                <p>Market sizing, competitive analysis</p>
+                            </div>
+                        </div>
+
+                        <div class="card" style="text-align:center;padding:2rem">
+                            <h3 style="margin-bottom:0.5rem">Your Quiz Stats</h3>
+                            <div class="grid-3" style="margin-top:1rem">
+                                <div>
+                                    <div style="font-family:'Space Grotesk';font-size:1.5rem;font-weight:700;color:var(--accent-secondary)" id="totalQuizzes">0</div>
+                                    <div style="font-size:0.8rem;color:var(--text-muted)">Quizzes Taken</div>
+                                </div>
+                                <div>
+                                    <div style="font-family:'Space Grotesk';font-size:1.5rem;font-weight:700;color:var(--accent-green)" id="avgScore">0%</div>
+                                    <div style="font-size:0.8rem;color:var(--text-muted)">Avg Score</div>
+                                </div>
+                                <div>
+                                    <div style="font-family:'Space Grotesk';font-size:1.5rem;font-weight:700;color:var(--accent-gold)" id="bestCategory">—</div>
+                                    <div style="font-size:0.8rem;color:var(--text-muted)">Strongest Area</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Quiz -->
+                    <div id="quizActive" style="display:none">
+                        <div class="quiz-header">
+                            <span class="quiz-question-num" id="quizQuestionNum">Q1 of 5</span>
+                            <div class="quiz-progress-bar">
+                                <div class="quiz-progress-fill" id="quizProgressBar" style="width:20%"></div>
+                            </div>
+                            <div class="quiz-score">⭐ <span id="quizCurrentScore">0</span></div>
+                        </div>
+
+                        <div class="quiz-question-card">
+                            <span class="quiz-question-type" id="quizType">VENTURE CAPITAL</span>
+                            <h3 class="quiz-question-text" id="quizQuestion"></h3>
+                            <div class="quiz-options" id="quizOptions"></div>
+                            <div class="quiz-explanation" id="quizExplanation">
+                                <h4>💡 Explanation</h4>
+                                <p id="quizExplanationText"></p>
+                            </div>
+                        </div>
+
+                        <div class="quiz-nav">
+                            <button class="btn btn-secondary" onclick="exitQuiz()">✕ Exit Quiz</button>
+                            <button class="btn btn-primary" id="quizNextBtn" onclick="nextQuestion()" style="display:none">Next →</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Results -->
+                    <div id="quizResults" style="display:none">
+                        <div class="quiz-results">
+                            <div class="score-circle" id="resultScoreCircle">
+                                <div class="score" id="resultScore">0%</div>
+                                <div style="font-size:0.8rem;color:var(--text-muted)">Score</div>
+                            </div>
+                            <h2 style="margin-bottom:0.5rem" id="resultTitle">Quiz Complete!</h2>
+                            <p style="color:var(--text-secondary);margin-bottom:2rem" id="resultMessage"></p>
+                            <div class="feedback-panel" style="text-align:left">
+                                <h4 style="color:var(--accent-secondary);margin-bottom:1rem">📋 Personalized Feedback</h4>
+                                <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7" id="resultFeedback"></p>
+                            </div>
+                            <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center">
+                                <button class="btn btn-primary" onclick="exitQuiz()">Take Another Quiz</button>
+                                <button class="btn btn-secondary" onclick="showPage('resources')">📚 Study Resources</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===================== SCENARIOS PAGE ===================== -->
+        <div class="page" id="page-scenarios">
+            <section class="section">
+                <div class="section-header">
+                    <h2>📈 Weekly Strategy Scenarios</h2>
+                    <p>Real-world investment analysis & strategy challenges with case studies</p>
+                </div>
+
+                <div class="sub-tabs">
+                    <button class="sub-tab active" onclick="switchScenarioTab('weekly', this)">🎯 This Week's Challenge</button>
+                    <button class="sub-tab" onclick="switchScenarioTab('casestudies', this)">📋 Case Study Planner</button>
+                    <button class="sub-tab" onclick="switchScenarioTab('transitions', this)">🔄 Transition Stories</button>
+                    <button class="sub-tab" onclick="switchScenarioTab('interview', this)">🎤 Mock Interview</button>
+                </div>
+
+                <!-- Weekly Challenge -->
+                <div class="tab-content active" id="scenario-weekly">
+                    <div class="countdown-bar">
+                        <span class="timer-icon">⏰</span>
+                        <span class="countdown-text">New scenario drops in: <span class="countdown-time" id="weeklyCountdown">--</span></span>
+                    </div>
+
+                    <div class="week-badge">📅 Week <span id="currentWeekNum">1</span> Challenge</div>
+
+                    <div class="scenario-workspace">
+                        <div class="scenario-brief">
+                            <h3>🦄 Should You Invest in "HealthStack AI"?</h3>
+                            <div class="context">
+                                <p><strong>Scenario:</strong> You're an associate at a Series A VC fund ($200M AUM). A health-tech startup "HealthStack AI" is raising a $15M Series A at a $60M pre-money valuation. They use AI for early disease detection.</p>
+                                <br>
+                                <p><strong>Key Data Points:</strong></p>
+                            </div>
+                            <table class="scenario-data-table">
+                                <tr><th>Metric</th><th>Value</th></tr>
+                                <tr><td>ARR</td><td>$2.1M (growing 3x YoY)</td></tr>
+                                <tr><td>Burn Rate</td><td>$400K/month</td></tr>
+                                <tr><td>Customers</td><td>12 hospital systems</td></tr>
+                                <tr><td>Team</td><td>28 people (8 engineers)</td></tr>
+                                <tr><td>TAM</td><td>$45B (AI diagnostics)</td></tr>
+                                <tr><td>Competition</td><td>3 funded competitors</td></tr>
+                                <tr><td>Gross Margin</td><td>72%</td></tr>
+                                <tr><td>NRR</td><td>135%</td></tr>
+                            </table>
+                            <div class="framework-tags">
+                                <span class="framework-tag">Market Sizing</span>
+                                <span class="framework-tag">Unit Economics</span>
+                                <span class="framework-tag">Competitive Moat</span>
+                                <span class="framework-tag">Team Assessment</span>
+                                <span class="framework-tag">Risk Analysis</span>
+                            </div>
+                        </div>
+
+                        <div class="scenario-answer-area">
+                            <h3>Your Investment Memo</h3>
+                            <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1rem">Structure your analysis using VC frameworks. Consider market, team, traction, and risks.</p>
+                            
+                            <textarea class="scenario-textarea" id="scenarioAnswer" placeholder="Write your investment thesis here...
+
+Consider:
+1. Market Opportunity — Is the TAM real and accessible?
+2. Traction — What do the metrics tell you?
+3. Team — Can they execute?
+4. Competitive Moat — What's defensible?
+5. Risks — What could go wrong?
+6. Investment Decision — Invest or pass? Why?"></textarea>
+                            
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1rem">
+                                <span style="font-size:0.8rem;color:var(--text-muted)" id="scenarioWordCount">0 words</span>
+                                <div style="display:flex;gap:8px">
+                                    <button class="btn btn-secondary btn-sm" onclick="saveScenario()">💾 Save Draft</button>
+                                    <button class="btn btn-primary btn-sm" onclick="submitScenario()">📤 Submit & Get Feedback</button>
+                                </div>
+                            </div>
+
+                            <div id="scenarioFeedback" style="display:none;margin-top:1.5rem" class="feedback-panel">
+                                <h4 style="color:var(--accent-secondary);margin-bottom:0.5rem">🤖 AI Feedback</h4>
+                                <div id="scenarioFeedbackText"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study Planner -->
+                <div class="tab-content" id="scenario-casestudies">
+                    <div class="section-header">
+                        <h2 style="font-size:1.4rem">📋 Case Study Practice Planner</h2>
+                        <p>Track and plan your case study practice sessions systematically</p>
+                    </div>
+
+                    <div class="grid-2" style="margin-bottom:2rem">
+                        <div class="case-study-card">
+                            <div class="case-study-header">
+                                <span class="case-study-type" style="background:rgba(0,184,148,0.15);color:var(--accent-green)">PROFITABILITY</span>
+                                <h3 style="font-size:1.1rem;margin-top:0.5rem">Declining Margins at RetailCo</h3>
+                            </div>
+                            <div class="case-study-body">
+                                <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6">A mid-market retailer has seen EBITDA margins drop from 18% to 11% over 3 years despite revenue growth. Diagnose the issue and recommend a turnaround strategy.</p>
+                                <div class="case-study-meta">
+                                    <span>⏱️ 30 min</span>
+                                    <span>📊 Intermediate</span>
+                                    <span>🏢 McKinsey-style</span>
+                                </div>
+                                <button class="btn btn-sm btn-secondary" style="margin-top:1rem" onclick="startCaseStudy('profitability')">Start Practice →</button>
+                            </div>
+                        </div>
+
+                        <div class="case-study-card">
+                            <div class="case-study-header">
+                                <span class="case-study-type" style="background:rgba(9,132,227,0.15);color:var(--accent-blue)">MARKET ENTRY</span>
+                                <h3 style="font-size:1.1rem;margin-top:0.5rem">EV Charging Network in India</h3>
+                            </div>
+                            <div class="case-study-body">
+                                <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6">A global energy company wants to build an EV charging network across India's top 10 cities. Should they enter? What's the go-to-market strategy?</p>
+                                <div class="case-study-meta">
+                                    <span>⏱️ 45 min</span>
+                                    <span>📊 Advanced</span>
+                                    <span>🏢 BCG-style</span>
+                                </div>
+                                <button class="btn btn-sm btn-secondary" style="margin-top:1rem" onclick="startCaseStudy('market-entry')">Start Practice →</button>
+                            </div>
+                        </div>
+
+                        <div class="case-study-card">
+                            <div class="case-study-header">
+                                <span class="case-study-type" style="background:rgba(108,92,231,0.15);color:var(--accent-secondary)">M&A</span>
+                                <h3 style="font-size:1.1rem;margin-top:0.5rem">SaaS Acquisition Evaluation</h3>
+                            </div>
+                            <div class="case-study-body">
+                                <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6">A PE fund is evaluating acquiring a B2B SaaS company at 12x ARR ($180M). Assess whether this is a good investment and what value creation levers exist.</p>
+                                <div class="case-study-meta">
+                                    <span>⏱️ 40 min</span>
+                                    <span>📊 Advanced</span>
+                                    <span>🏢 Bain-style</span>
+                                </div>
+                                <button class="btn btn-sm btn-secondary" style="margin-top:1rem" onclick="startCaseStudy('mna')">Start Practice →</button>
+                            </div>
+                        </div>
+
+                        <div class="case-study-card">
+                            <div class="case-study-header">
+                                <span class="case-study-type" style="background:rgba(253,121,168,0.15);color:var(--accent-warm)">INVESTMENT MEMO</span>
+                                <h3 style="font-size:1.1rem;margin-top:0.5rem">Series B: EdTech Platform</h3>
+                            </div>
+                            <div class="case-study-body">
+                                <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6">An EdTech company serving Southeast Asia is raising Series B at $200M valuation. Write an investment memo recommending invest or pass with supporting analysis.</p>
+                                <div class="case-study-meta">
+                                    <span>⏱️ 60 min</span>
+                                    <span>📊 Expert</span>
+                                    <span>💰 VC-style</span>
+                                </div>
+                                <button class="btn btn-sm btn-secondary" style="margin-top:1rem" onclick="startCaseStudy('investment')">Start Practice →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transition Stories -->
+                <div class="tab-content" id="scenario-transitions">
+                    <div class="section-header">
+                        <h2 style="font-size:1.4rem">🔄 Successful Career Transitions</h2>
+                        <p>Real case studies of people who pivoted from non-traditional backgrounds into VC & consulting</p>
+                    </div>
+
+                    <div class="case-studies-grid">
+                        <div class="transition-card">
+                            <div class="transition-avatar" style="background:rgba(108,92,231,0.15);color:var(--accent-secondary)">SP</div>
+                            <h3 style="font-size:1.1rem">Sarah Park</h3>
+                            <div class="transition-path">
+                                <span class="from">Product Manager</span>
+                                <span class="arrow">→</span>
+                                <span class="to">VC Associate at a16z</span>
+                            </div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6;margin:1rem 0">Sarah spent 5 years as a PM at Stripe before transitioning to VC. She leveraged her product intuition and founder relationships to break into a top fund.</p>
+                            <ul class="transition-lessons">
+                                <li>Built a public portfolio of startup analyses on Substack</li>
+                                <li>Made 3 angel investments to demonstrate conviction</li>
+                                <li>Networked through 50+ coffee chats over 6 months</li>
+                                <li>Used PM frameworks to evaluate market opportunities</li>
+                            </ul>
+                        </div>
+
+                        <div class="transition-card">
+                            <div class="transition-avatar" style="background:rgba(0,184,148,0.15);color:var(--accent-green)">MR</div>
+                            <h3 style="font-size:1.1rem">Marcus Rodriguez</h3>
+                            <div class="transition-path">
+                                <span class="from">Operations Director</span>
+                                <span class="arrow">→</span>
+                                <span class="to">McKinsey Engagement Manager</span>
+                            </div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6;margin:1rem 0">Marcus transitioned from running operations at a D2C brand to McKinsey as an experienced hire. His operational depth became his differentiator.</p>
+                            <ul class="transition-lessons">
+                                <li>Completed 200+ practice cases over 8 months</li>
+                                <li>Positioned ops experience as "real consulting" in interviews</li>
+                                <li>Got referral through alumni network at his MBA program</li>
+                                <li>Emphasized quantitative impact ($50M revenue optimization)</li>
+                            </ul>
+                        </div>
+
+                        <div class="transition-card">
+                            <div class="transition-avatar" style="background:rgba(253,121,168,0.15);color:var(--accent-warm)">AK</div>
+                            <h3 style="font-size:1.1rem">Aisha Khan</h3>
+                            <div class="transition-path">
+                                <span class="from">Strategy at Founder's Office</span>
+                                <span class="arrow">→</span>
+                                <span class="to">Principal at Sequoia</span>
+                            </div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6;margin:1rem 0">Aisha's journey mirrors your path most closely. From Founder's Office to one of the top VC firms — her strategy chops and startup ecosystem knowledge were key.</p>
+                            <ul class="transition-lessons">
+                                <li>Published weekly market maps on emerging sectors</li>
+                                <li>Helped source 3 deals for VCs before joining full-time</li>
+                                <li>Built a thesis on vertical SaaS in India that went viral</li>
+                                <li>Founder's Office = instant credibility with fund partners</li>
+                            </ul>
+                        </div>
+
+                        <div class="transition-card">
+                            <div class="transition-avatar" style="background:rgba(255,234,167,0.15);color:var(--accent-gold)">JW</div>
+                            <h3 style="font-size:1.1rem">James Wang</h3>
+                            <div class="transition-path">
+                                <span class="from">Program Manager (Big Tech)</span>
+                                <span class="arrow">→</span>
+                                <span class="to">BCG Consultant</span>
+                            </div>
+                            <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6;margin:1rem 0">James left Google's TPM role to join BCG. His ability to manage complex cross-functional programs translated directly to client engagement management.</p>
+                            <ul class="transition-lessons">
+                                <li>Framed PM experience as "internal consulting" projects</li>
+                                <li>Practiced 150 cases with a structured study group</li>
+                                <li>Used Google's scale narratives to show business impact</li>
+                                <li>Applied through experienced hire pipeline (non-MBA)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock Interview -->
+                <div class="tab-content" id="scenario-interview">
+                    <div class="section-header">
+                        <h2 style="font-size:1.4rem">🎤 Mock Interview Practice</h2>
+                        <p>Practice behavioral, case, and fit questions with instant framework guidance</p>
+                    </div>
+
+                    <div class="interview-panel">
+                        <div class="interview-sidebar">
+                            <button class="interview-question-btn active" onclick="loadInterviewQ(0, this)">
+                                <div class="q-num">Behavioral #1</div>
+                                Why are you transitioning to VC/consulting?
+                            </button>
+                            <button class="interview-question-btn" onclick="loadInterviewQ(1, this)">
+                                <div class="q-num">Behavioral #2</div>
+                                Tell me about a time you influenced without authority
+                            </button>
+                            <button class="interview-question-btn" onclick="loadInterviewQ(2, this)">
+                                <div class="q-num">Case #1</div>
+                                How would you size the Indian EV market?
+                            </button>
+                            <button class="interview-question-btn" onclick="loadInterviewQ(3, this)">
+                                <div class="q-num">Case #2</div>
+                                A coffee chain's profits dropped 30%. Diagnose.
+                            </button>
+                            <button class="interview-question-btn" onclick="loadInterviewQ(4, this)">
+                                <div class="q-num">VC Specific</div>
+                                What's a recent startup you'd invest in and why?
+                            </button>
+                            <button class="interview-question-btn" onclick="loadInterviewQ(5, this)">
+                                <div class="q-num">Fit #1</div>
+                                What makes you uniquely suited for this role?
+                            </button>
+                        </div>
+                        <div class="interview-main">
+                            <span class="quiz-question-type" id="interviewType">BEHAVIORAL</span>
+                            <h3 style="font-size:1.3rem;margin:1rem 0" id="interviewQuestion">Why are you transitioning from Program Management to VC/Consulting?</h3>
+                            <div id="interviewFramework" style="margin:1rem 0;padding:1rem;background:rgba(108,92,231,0.05);border:1px solid rgba(108,92,231,0.15);border-radius:12px">
+                                <h4 style="font-size:0.85rem;color:var(--accent-secondary);margin-bottom:0.5rem">💡 Recommended Framework: STAR + Bridge</h4>
+                                <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6">
+                                    <strong>Situation:</strong> Describe your current role impact<br>
+                                    <strong>Task:</strong> What drove you to explore this transition<br>
+                                    <strong>Action:</strong> Steps you've taken to prepare<br>
+                                    <strong>Result:</strong> Why you're the right fit now<br>
+                                    <strong>Bridge:</strong> Connect PM skills → VC/consulting value
+                                </p>
+                            </div>
+                            <textarea class="scenario-textarea" id="interviewAnswer" placeholder="Practice your answer here..." style="min-height:150px"></textarea>
+                            <div style="display:flex;justify-content:flex-end;margin-top:1rem;gap:8px">
+                                <button class="btn btn-secondary btn-sm" onclick="clearInterviewAnswer()">Clear</button>
+                                <button class="btn btn-primary btn-sm" onclick="gradeInterviewAnswer()">Get Feedback</button>
+                            </div>
+                            <div id="interviewFeedback" style="display:none;margin-top:1rem" class="feedback-panel"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===================== RESOURCES PAGE ===================== -->
+        <div class="page" id="page-resources">
+            <section class="section">
+                <div class="section-header">
+                    <h2>📚 Curated Resources</h2>
+                    <p>Books, tools, and networking strategies to accelerate your career pivot</p>
+                </div>
+
+                <div class="sub-tabs" style="margin-bottom:2rem">
+                    <button class="sub-tab active" onclick="switchResourceTab('books', this)">📖 Books</button>
+                    <button class="sub-tab" onclick="switchResourceTab('networking', this)">🤝 Networking</button>
+                    <button class="sub-tab" onclick="switchResourceTab('tools', this)">🛠️ Tools</button>
+                </div>
+
+                <div class="tab-content active" id="resource-books">
+                    <div class="grid-3">
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(108,92,231,0.15)">📘</div>
+                            <h3>Venture Deals</h3>
+                            <div class="author">Brad Feld & Jason Mendelson</div>
+                            <p>The bible of venture capital. Covers term sheets, valuations, and fund mechanics in detail.</p>
+                            <div class="resource-tags">
+                                <span class="resource-tag">VC</span>
+                                <span class="resource-tag">Must Read</span>
+                                <span class="resource-tag">Beginner</span>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(0,184,148,0.15)">📗</div>
+                            <h3>Case in Point</h3>
+                            <div class="author">Marc Cosentino</div>
+                            <p>The gold standard for case interview preparation. Frameworks, practice cases, and methodology.</p>
+                            <div class="resource-tags">
+                                <span class="resource-tag">Consulting</span>
+                                <span class="resource-tag">Must Read</span>
+                                <span class="resource-tag">Frameworks</span>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(253,121,168,0.15)">📕</div>
+                            <h3>The Hard Thing About Hard Things</h3>
+                            <div class="author">Ben Horowitz</div>
+                            <p>Essential reading for understanding the operator mindset. Great for VC interviews and thesis building.</p>
+                            <div class="resource-tags">
+                                <span class="resource-tag">Startups</span>
+                                <span class="resource-tag">VC</span>
+                                <span class="resource-tag">Leadership</span>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(255,234,167,0.15)">📙</div>
+                            <h3>Competitive Strategy</h3>
+                            <div class="author">Michael Porter</div>
+                            <p>Framework-heavy strategy book. Porter's Five Forces is a consulting interview staple.</p>
+                            <div class="resource-tags">
+                                <span class="resource-tag">Strategy</span>
+                                <span class="resource-tag">Frameworks</span>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(9,132,227,0.15)">📘</div>
+                            <h3>Secrets of Sand Hill Road</h3>
+                            <div class="author">Scott Kupor</div>
+                            <p>Inside look at how VC firms operate, make decisions, and what they look for in investments.</p>
+                            <div class="resource-tags">
+                                <span class="resource-tag">VC</span>
+                                <span class="resource-tag">Industry</span>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(225,112,85,0.15)">📕</div>
+                            <h3>The McKinsey Way</h3>
+                            <div class="author">Ethan Rasiel</div>
+                            <p>Behind-the-scenes look at how McKinsey consultants think, work, and solve problems.</p>
+                            <div class="resource-tags">
+                                <span class="resource-tag">Consulting</span>
+                                <span class="resource-tag">Culture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="resource-networking">
+                    <div class="tip-cards">
+                        <div class="tip-card">
+                            <div class="tip-number">01</div>
+                            <h3>The 5-5-5 Rule</h3>
+                            <p>Every week, reach out to 5 new people, follow up with 5 existing contacts, and have 5 meaningful conversations. Consistency beats intensity.</p>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-number">02</div>
+                            <h3>Lead with Value</h3>
+                            <p>Before asking for help, share a relevant article, make an introduction, or offer a unique insight. The best networkers give before they receive.</p>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-number">03</div>
+                            <h3>The Warm Intro Chain</h3>
+                            <p>Don't cold-email partners directly. Map your 2nd-degree connections and ask for warm introductions through mutual contacts.</p>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-number">04</div>
+                            <h3>Build in Public</h3>
+                            <p>Share your learning journey on LinkedIn/Twitter. Post market analyses, book takeaways, and industry observations. VCs and consultants notice active thinkers.</p>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-number">05</div>
+                            <h3>The Informational Interview Formula</h3>
+                            <p>Ask: "What's one thing you wish you knew before entering VC/consulting?" → Listen deeply → Follow up with a thank-you note + relevant article within 24 hours.</p>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-number">06</div>
+                            <h3>Target the Middle</h3>
+                            <p>Don't just network with senior partners. Associates and principals are more accessible and often have more influence in hiring decisions.</p>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-number">07</div>
+                            <h3>Community Before Application</h3>
+                            <p>Join VC/consulting communities (On Deck, Reforge, Product School alumni). Being part of the ecosystem signals commitment.</p>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-number">08</div>
+                            <h3>The Deal Flow Hustle</h3>
+                            <p>For VC specifically: Source and send interesting deal flow to VCs. Nothing proves your eye for startups better than actually finding good ones.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="resource-tools">
+                    <div class="grid-3">
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(108,92,231,0.15)">🧮</div>
+                            <h3>PrepLounge</h3>
+                            <p>Practice case interviews with peers. Structured drills and video solutions for MBB prep.</p>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(0,184,148,0.15)">📊</div>
+                            <h3>PitchBook / Crunchbase</h3>
+                            <p>Research startup funding rounds, valuations, and investor profiles for your deal analysis.</p>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(253,121,168,0.15)">📝</div>
+                            <h3>Notion VC Templates</h3>
+                            <p>Investment memo templates, deal pipeline trackers, and thesis frameworks used by real VCs.</p>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(255,234,167,0.15)">🎓</div>
+                            <h3>Coursera: Strategy</h3>
+                            <p>Free courses from Wharton, INSEAD on competitive strategy and financial analysis.</p>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(9,132,227,0.15)">📰</div>
+                            <h3>The Generalist / Stratechery</h3>
+                            <p>Deep-dive newsletters on tech strategy and VC. Perfect for building market intuition.</p>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon" style="background:rgba(225,112,85,0.15)">🎯</div>
+                            <h3>Wall Street Prep</h3>
+                            <p>Financial modeling courses essential for VC and PE roles. LBO, DCF, and comparable analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon" id="toastIcon">✅</span>
+        <span class="toast-text" id="toastText">Action completed!</span>
+    </div>
+
+    <script>
+        // ==================== STATE MANAGEMENT ====================
+        let state = {
+            tasks: JSON.parse(localStorage.getItem('rt_tasks') || '[]'),
+            completedTasks: parseInt(localStorage.getItem('rt_completedTasks') || '0'),
+            focusMinutes: parseInt(localStorage.getItem('rt_focusMinutes') || '0'),
+            quizzesTaken: parseInt(localStorage.getItem('rt_quizzesTaken') || '0'),
+            quizScores: JSON.parse(localStorage.getItem('rt_quizScores') || '[]'),
+            streak: parseInt(localStorage.getItem('rt_streak') || '0'),
+            lastVisit: localStorage.getItem('rt_lastVisit') || '',
+            sessionCount: parseInt(localStorage.getItem('rt_sessionCount') || '0'),
+            checklistState: JSON.parse(localStorage.getItem('rt_checklist') || '{}'),
+            scenarioDraft: localStorage.getItem('rt_scenarioDraft') || ''
+        };
+
+        function saveState() {
+            localStorage.setItem('rt_tasks', JSON.stringify(state.tasks));
+            localStorage.setItem('rt_completedTasks', state.completedTasks);
+            localStorage.setItem('rt_focusMinutes', state.focusMinutes);
+            localStorage.setItem('rt_quizzesTaken', state.quizzesTaken);
+            localStorage.setItem('rt_quizScores', JSON.stringify(state.quizScores));
+            localStorage.setItem('rt_streak', state.streak);
+            localStorage.setItem('rt_lastVisit', state.lastVisit);
+            localStorage.setItem('rt_sessionCount', state.sessionCount);
+            localStorage.setItem('rt_checklist', JSON.stringify(state.checklistState));
+            localStorage.setItem('rt_scenarioDraft', state.scenarioDraft);
+        }
+
+        // ==================== STREAK TRACKING ====================
+        function updateStreak() {
+            const today = new Date().toDateString();
+            if (state.lastVisit !== today) {
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                if (state.lastVisit === yesterday.toDateString()) {
+                    state.streak++;
+                } else if (state.lastVisit !== '') {
+                    state.streak = 1;
+                } else {
+                    state.streak = 1;
+                }
+                state.lastVisit = today;
+                saveState();
+            }
+            document.getElementById('streakCount').textContent = state.streak;
+            document.getElementById('stat-streak').textContent = state.streak;
+        }
+
+        // ==================== NAVIGATION ====================
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + pageId).classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('navLinks').classList.remove('open');
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // ==================== TIMER ====================
+        let timerInterval = null;
+        let timerSeconds = 25 * 60;
+        let timerRunning = false;
+        let timerMode = 25;
+        let completedSessions = 0;
+
+        function setTimerMode(minutes, btn) {
+            if (timerRunning) return;
+            timerMode = minutes;
+            timerSeconds = minutes * 60;
+            updateTimerDisplay();
+            document.querySelectorAll('.timer-mode-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const labels = {25: 'FOCUS SESSION', 50: 'DEEP WORK', 5: 'SHORT BREAK', 15: 'LONG BREAK'};
+            document.getElementById('timerLabel').textContent = labels[minutes] || 'SESSION';
+        }
+
+        function updateTimerDisplay() {
+            const min = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+            const sec = (timerSeconds % 60).toString().padStart(2, '0');
+            document.getElementById('timerDisplay').textContent = `${min}:${sec}`;
+            document.title = `${min}:${sec} | Rajat Tiwari Strategy Hub`;
+        }
+
+        function toggleTimer() {
+            if (timerRunning) {
+                clearInterval(timerInterval);
+                timerRunning = false;
+                document.getElementById('timerStartBtn').innerHTML = '▶ Resume';
+            } else {
+                timerRunning = true;
+                document.getElementById('timerStartBtn').innerHTML = '⏸ Pause';
+                timerInterval = setInterval(() => {
+                    timerSeconds--;
+                    updateTimerDisplay();
+                    if (timerSeconds <= 0) {
+                        clearInterval(timerInterval);
+                        timerRunning = false;
+                        completedSessions++;
+                        state.focusMinutes += timerMode;
+                        state.sessionCount++;
+                        saveState();
+                        updateSessionDots();
+                        logSession();
+                        updateDashboardStats();
+                        showToast('🎉', `${timerMode} min session complete! Total: ${state.sessionCount} sessions`);
+                        document.getElementById('timerStartBtn').innerHTML = '▶ Start';
+                        timerSeconds = timerMode * 60;
+                        updateTimerDisplay();
+                        // Play notification sound
+                        try {
+                            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                            const osc = ctx.createOscillator();
+                            osc.type = 'sine';
+                            osc.frequency.value = 800;
+                            osc.connect(ctx.destination);
+                            osc.start();
+                            setTimeout(() => osc.stop(), 200);
+                        } catch(e) {}
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            timerSeconds = timerMode * 60;
+            updateTimerDisplay();
+            document.getElementById('timerStartBtn').innerHTML = '▶ Start';
+        }
+
+        function updateSessionDots() {
+            for (let i = 1; i <= 4; i++) {
+                const dot = document.getElementById('session-' + i);
+                dot.className = 'timer-session-dot';
+                if (i <= completedSessions % 4) {
+                    dot.classList.add('completed');
+                } else if (i === (completedSessions % 4) + 1) {
+                    dot.classList.add('current');
+                }
+            }
+        }
+
+        function logSession() {
+            const logContainer = document.getElementById('sessionLog');
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            
+            if (state.sessionCount === 1) {
+                logContainer.innerHTML = '';
+            }
+            
+            const entry = document.createElement('div');
+            entry.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(42,42,74,0.5);font-size:0.85rem';
+            entry.innerHTML = `
+                <span style="color:var(--accent-green)">✓ ${timerMode}min session</span>
+                <span style="color:var(--text-muted)">${timeStr}</span>
+            `;
+            logContainer.prepend(entry);
+            
+            const hours = Math.floor(state.focusMinutes / 60);
+            const mins = state.focusMinutes % 60;
+            document.getElementById('totalFocusTime').textContent = `Total: ${hours}h ${mins}m`;
+        }
+
+        // ==================== TASK TRACKER ====================
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const task = {
+                id: Date.now(),
+                text: text,
+                priority: document.getElementById('taskPriority').value,
+                category: document.getElementById('taskCategory').value,
+                completed: false,
+                createdAt: new Date().toISOString()
+            };
+
+            state.tasks.unshift(task);
+            saveState();
+            input.value = '';
+            renderTasks();
+            showToast('✅', 'Task added successfully!');
+        }
+
+        function toggleTask(id) {
+            const task = state.tasks.find(t => t.id === id);
+            if (task) {
+                task.completed = !task.completed;
+                if (task.completed) {
+                    state.completedTasks++;
+                } else {
+                    state.completedTasks = Math.max(0, state.completedTasks - 1);
+                }
+                saveState();
+                renderTasks();
+                updateDashboardStats();
+            }
+        }
+
+        function deleteTask(id) {
+            state.tasks = state.tasks.filter(t => t.id !== id);
+            saveState();
+            renderTasks();
+        }
+
+        let currentFilter = 'all';
+
+        function filterTasks(filter, btn) {
+            currentFilter = filter;
+            document.querySelectorAll('.task-filter').forEach(f => f.classList.remove('active'));
+            btn.classList.add('active');
+            renderTasks();
+        }
+
+        function renderTasks() {
+            const container = document.getElementById('taskList');
+            let filtered = state.tasks;
+
+            if (currentFilter === 'completed') {
+                filtered = filtered.filter(t => t.completed);
+            } else if (currentFilter !== 'all') {
+                filtered = filtered.filter(t => t.category === currentFilter && !t.completed);
+            }
+
+            container.innerHTML = filtered.map(task => `
+                <div class="task-item ${task.completed ? 'completed' : ''}">
+                    <div class="task-checkbox ${task.completed ? 'checked' : ''}" onclick="toggleTask(${task.id})">
+                        ${task.completed ? '✓' : ''}
+                    </div>
+                    <span class="task-text">${task.text}</span>
+                    <span class="task-priority ${task.priority}">${task.priority}</span>
+                    <button class="task-delete" onclick="deleteTask(${task.id})">×</button>
+                </div>
+            `).join('');
+
+            const total = state.tasks.length;
+            const completed = state.tasks.filter(t => t.completed).length;
+            document.getElementById('taskStats').textContent = `${total} tasks · ${completed} completed`;
+        }
+
+        // Load default tasks if empty
+        function initDefaultTasks() {
+            if (state.tasks.length === 0) {
+                const defaults = [
+                    { text: 'Read Chapter 1 of Venture Deals', priority: 'high', category: 'learning' },
+                    { text: 'Practice market sizing: Indian coffee market', priority: 'high', category: 'practice' },
+                    { text: 'Connect with 3 VCs on LinkedIn', priority: 'medium', category: 'networking' },
+                    { text: 'Complete profitability case framework notes', priority: 'high', category: 'learning' },
+                    { text: 'Draft investment thesis on AI in healthcare', priority: 'medium', category: 'practice' },
+                    { text: 'Research Sequoia India portfolio companies', priority: 'low', category: 'learning' },
+                    { text: 'Schedule informational interview with BCG alum', priority: 'high', category: 'networking' },
+                    { text: 'Update resume for consulting applications', priority: 'medium', category: 'application' },
+                ];
+                defaults.forEach((d, i) => {
+                    state.tasks.push({
+                        id: Date.now() + i,
+                        ...d,
+                        completed: false,
+                        createdAt: new Date().toISOString()
+                    });
+                });
+                saveState();
+            }
+        }
+
+        // ==================== QUIZ ====================
+        const quizBank = {
+            vc: [
+                {
+                    q: "What does 'pre-money valuation' refer to?",
+                    options: ["Company value after investment", "Company value before new investment", "Total fund size", "Exit valuation"],
+                    correct: 1,
+                    explanation: "Pre-money valuation is the company's value before new capital is invested. Post-money = Pre-money + Investment amount. If a startup raises $5M at $20M pre-money, the post-money is $25M and the investor owns 20%."
+                },
+                {
+                    q: "A VC fund has 2% management fee and 20% carry. What does this mean?",
+                    options: ["2% of returns and 20% of fund size", "2% annual fee on AUM, 20% of profits above hurdle", "2% of deals and 20% management fee", "20% annual fee and 2% carry"],
+                    correct: 1,
+                    explanation: "The '2 and 20' structure means VCs charge 2% of Assets Under Management annually as management fee, plus 20% of profits (carry) above a hurdle rate (usually 8%). This aligns GP and LP incentives."
+                },
+                {
+                    q: "What is the typical ownership target for a Series A lead investor?",
+                    options: ["5-10%", "15-25%", "30-40%", "50%+"],
+                    correct: 1,
+                    explanation: "Series A lead investors typically target 15-25% ownership. This ensures meaningful economics at exit while leaving room for future dilution. A 20% stake in a company that exits at 10x the entry valuation returns 2x the fund."
+                },
+                {
+                    q: "Net Revenue Retention (NRR) of 130% means:",
+                    options: ["Company lost 30% of revenue", "Existing customers are spending 30% more year-over-year", "30% of customers churned", "Revenue grew 130% total"],
+                    correct: 1,
+                    explanation: "NRR of 130% means the same cohort of customers from a year ago is now generating 30% more revenue through expansion (upsells, cross-sells) despite any churn. NRR > 120% is considered excellent for SaaS."
+                },
+                {
+                    q: "What is a 'cap table' in venture capital?",
+                    options: ["Maximum investment amount", "Table showing ownership percentages of all shareholders", "Revenue projections table", "List of board members"],
+                    correct: 1,
+                    explanation: "A capitalization table (cap table) tracks all equity ownership including founders, investors, option pool, and convertible instruments. It's essential for understanding dilution and economics across funding rounds."
+                }
+            ],
+            consulting: [
+                {
+                    q: "In a profitability case, what's the first question you should ask?",
+                    options: ["What are the fixed costs?", "Is this a revenue problem, cost problem, or both?", "What is the market share?", "How many employees does the company have?"],
+                    correct: 1,
+                    explanation: "Always start by isolating whether it's a revenue issue, cost issue, or both. This gives structure: Revenue = Price × Volume, Costs = Fixed + Variable. Then drill down into the problem area systematically."
+                },
+                {
+                    q: "Porter's Five Forces does NOT include which of the following?",
+                    options: ["Threat of new entrants", "Bargaining power of suppliers", "Government regulation", "Rivalry among existing competitors"],
+                    correct: 2,
+                    explanation: "Porter's Five Forces are: 1) Threat of new entrants, 2) Bargaining power of suppliers, 3) Bargaining power of buyers, 4) Threat of substitutes, 5) Competitive rivalry. Government regulation is external but not one of the five."
+                },
+                {
+                    q: "What framework would you use to evaluate a market entry decision?",
+                    options: ["SWOT only", "Market attractiveness + Company capability + Financial feasibility", "BCG Matrix only", "PESTEL only"],
+                    correct: 1,
+                    explanation: "Market entry decisions should consider: 1) Market attractiveness (size, growth, competition), 2) Company capability (core competencies, resources, partnerships), and 3) Financial feasibility (investment needed, ROI timeline, risks)."
+                },
+                {
+                    q: "In case math: If a company has $500M revenue with 20% margin, and costs increase by 15%, what's the new margin?",
+                    options: ["5%", "8%", "12%", "17%"],
+                    correct: 1,
+                    explanation: "Current costs = $500M × 80% = $400M. 15% cost increase = $400M × 1.15 = $460M. New margin = ($500M - $460M) / $500M = $40M / $500M = 8%. This shows how sensitive margins are to cost changes."
+                },
+                {
+                    q: "What is MECE and why is it important?",
+                    options: ["A financial metric for evaluating deals", "Mutually Exclusive, Collectively Exhaustive — ensures complete analysis", "A consulting firm's proprietary framework", "A method for calculating market size"],
+                    correct: 1,
+                    explanation: "MECE (Mutually Exclusive, Collectively Exhaustive) is the foundational principle of structured thinking. It ensures your analysis categories don't overlap (mutually exclusive) and cover everything (collectively exhaustive). It's core to consulting problem-solving."
+                }
+            ],
+            strategy: [
+                {
+                    q: "How would you estimate the number of tennis balls that fit in this room?",
+                    options: ["Guess randomly", "Estimate room volume, ball volume, and apply packing efficiency", "Count walls and multiply", "Use industry data only"],
+                    correct: 1,
+                    explanation: "Market sizing approach: Room volume ≈ L × W × H (e.g., 20×15×10 ft = 3000 cu ft). Tennis ball ≈ 2.6\" diameter, volume ≈ 9.2 cu in. Room in cu in = 3000 × 1728 = 5.18M. Packing efficiency ≈ 64%. Answer ≈ 5.18M × 0.64 / 9.2 ≈ 360,000 balls."
+                },
+                {
+                    q: "Amazon's 'flywheel effect' primarily demonstrates which strategic concept?",
+                    options: ["First-mover advantage", "Network effects and reinforcing competitive advantages", "Cost leadership through scale only", "Vertical integration"],
+                    correct: 1,
+                    explanation: "Amazon's flywheel shows how each element reinforces others: Lower prices → More customers → More sellers → Better selection → Better experience → Lower costs → Even lower prices. This creates compounding, reinforcing competitive advantages."
+                },
+                {
+                    q: "What's the difference between TAM, SAM, and SOM?",
+                    options: ["They all mean the same thing", "TAM = total market, SAM = serviceable market, SOM = obtainable market", "TAM = technology, SAM = sales, SOM = operations", "They refer to company departments"],
+                    correct: 1,
+                    explanation: "TAM (Total Addressable Market) = entire market demand. SAM (Serviceable Addressable Market) = segment you can reach with your product/channel. SOM (Serviceable Obtainable Market) = realistic market share you can capture. VCs love founders who know their SOM."
+                },
+                {
+                    q: "A SaaS company has $10M ARR, 5% monthly churn, and $50K average ACV. What's the customer lifetime?",
+                    options: ["5 months", "10 months", "20 months", "50 months"],
+                    correct: 2,
+                    explanation: "Customer lifetime = 1 / churn rate = 1 / 5% = 20 months. LTV = ACV/12 × lifetime = $50K/12 × 20 = ~$83.3K. This 5% monthly churn is actually quite high — best SaaS companies have <2% monthly churn."
+                },
+                {
+                    q: "Which metric best indicates product-market fit for a B2B SaaS startup?",
+                    options: ["Number of downloads", "Net Revenue Retention > 120%", "Social media followers", "Number of employees"],
+                    correct: 1,
+                    explanation: "NRR > 120% means existing customers are expanding their usage significantly, which is the strongest signal of product-market fit. It means your product is so valuable that customers want MORE of it, not less."
+                }
+            ]
+        };
+
+        let currentQuiz = {
+            category: '',
+            questions: [],
+            currentIndex: 0,
+            score: 0,
+            answered: false
+        };
+
+        function startQuiz(category) {
+            currentQuiz.category = category;
+            currentQuiz.questions = [...quizBank[category]].sort(() => Math.random() - 0.5);
+            currentQuiz.currentIndex = 0;
+            currentQuiz.score = 0;
+            currentQuiz.answered = false;
+
+            document.getElementById('quizCategorySelection').style.display = 'none';
+            document.getElementById('quizActive').style.display = 'block';
+            document.getElementById('quizResults').style.display = 'none';
+
+            const labels = { vc: 'VENTURE CAPITAL', consulting: 'CONSULTING', strategy: 'STRATEGY & ANALYSIS' };
+            document.getElementById('quizType').textContent = labels[category];
+
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = currentQuiz.questions[currentQuiz.currentIndex];
+            const total = currentQuiz.questions.length;
+            const num = currentQuiz.currentIndex + 1;
+
+            document.getElementById('quizQuestionNum').textContent = `Q${num} of ${total}`;
+            document.getElementById('quizProgressBar').style.width = `${(num / total) * 100}%`;
+            document.getElementById('quizCurrentScore').textContent = currentQuiz.score;
+            document.getElementById('quizQuestion').textContent = q.q;
+            document.getElementById('quizExplanation').classList.remove('show');
+            document.getElementById('quizNextBtn').style.display = 'none';
+            currentQuiz.answered = false;
+
+            const letters = ['A', 'B', 'C', 'D'];
+            const optionsHtml = q.options.map((opt, i) => `
+                <div class="quiz-option" onclick="selectAnswer(${i})" id="quizOpt${i}">
+                    <span class="quiz-option-letter">${letters[i]}</span>
+                    <span>${opt}</span>
+                </div>
+            `).join('');
+            document.getElementById('quizOptions').innerHTML = optionsHtml;
+        }
+
+        function selectAnswer(index) {
+            if (currentQuiz.answered) return;
+            currentQuiz.answered = true;
+
+            const q = currentQuiz.questions[currentQuiz.currentIndex];
+            const isCorrect = index === q.correct;
+
+            if (isCorrect) {
+                currentQuiz.score++;
+                document.getElementById('quizOpt' + index).classList.add('correct');
+            } else {
+                document.getElementById('quizOpt' + index).classList.add('wrong');
+                document.getElementById('quizOpt' + q.correct).classList.add('correct');
+            }
+
+            document.getElementById('quizCurrentScore').textContent = currentQuiz.score;
+            document.getElementById('quizExplanationText').textContent = q.explanation;
+            document.getElementById('quizExplanation').classList.add('show');
+
+            if (currentQuiz.currentIndex < currentQuiz.questions.length - 1) {
+                document.getElementById('quizNextBtn').style.display = 'inline-flex';
+                document.getElementById('quizNextBtn').textContent = 'Next →';
+            } else {
+                document.getElementById('quizNextBtn').style.display = 'inline-flex';
+                document.getElementById('quizNextBtn').textContent = 'See Results →';
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuiz.currentIndex < currentQuiz.questions.length - 1) {
+                currentQuiz.currentIndex++;
+                loadQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            const total = currentQuiz.questions.length;
+            const score = currentQuiz.score;
+            const pct = Math.round((score / total) * 100);
+
+            state.quizzesTaken++;
+            state.quizScores.push({ category: currentQuiz.category, score: pct, date: new Date().toISOString() });
+            saveState();
+            updateDashboardStats();
+
+            document.getElementById('quizActive').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'block';
+
+            document.getElementById('resultScore').textContent = pct + '%';
+            const circle = document.getElementById('resultScoreCircle');
+            circle.style.borderColor = pct >= 80 ? 'var(--accent-green)' : pct >= 60 ? 'var(--accent-gold)' : 'var(--accent-orange)';
+
+            let title = '', msg = '', feedback = '';
+            if (pct >= 80) {
+                title = '🌟 Excellent, Rajat!';
+                msg = 'You\'re demonstrating strong mastery in this area.';
+                feedback = `Outstanding performance! Your score of ${pct}% shows you have a solid grasp of ${currentQuiz.category} concepts. To push further: try explaining each concept to someone else (the "Feynman technique"). Consider diving deeper into edge cases and real-world applications. You're interview-ready in this category — focus your energy on weaker areas now.`;
+            } else if (pct >= 60) {
+                title = '📈 Good Progress!';
+                msg = 'You\'re on the right track. A few areas need reinforcement.';
+                feedback = `Solid work, Rajat! ${pct}% shows good foundational knowledge. Review the questions you missed — understanding WHY the correct answer works is more valuable than memorizing it. I recommend: 1) Re-read relevant chapters in your study materials, 2) Practice 3 more cases in this area this week, 3) Try teaching the concepts you missed to solidify understanding.`;
+            } else {
+                title = '💪 Keep Building!';
+                msg = 'This area needs more focus. Use the resources section to strengthen fundamentals.';
+                feedback = `Don't be discouraged — ${pct}% means you've identified important knowledge gaps early! Here's your action plan: 1) Spend 30 min daily on ${currentQuiz.category} fundamentals this week, 2) Start with the recommended books in the Resources section, 3) Practice with the weekly scenarios, 4) Retake this quiz in 3 days to measure improvement. Every expert was once a beginner.`;
+            }
+
+            document.getElementById('resultTitle').textContent = title;
+            document.getElementById('resultMessage').textContent = msg;
+            document.getElementById('resultFeedback').textContent = feedback;
+        }
+
+        function exitQuiz() {
+            document.getElementById('quizCategorySelection').style.display = 'block';
+            document.getElementById('quizActive').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'none';
+            updateQuizStats();
+        }
+
+        function updateQuizStats() {
+            document.getElementById('totalQuizzes').textContent = state.quizzesTaken;
+            if (state.quizScores.length > 0) {
+                const avg = Math.round(state.quizScores.reduce((a, b) => a + b.score, 0) / state.quizScores.length);
+                document.getElementById('avgScore').textContent = avg + '%';
+
+                const categoryScores = {};
+                state.quizScores.forEach(s => {
+                    if (!categoryScores[s.category]) categoryScores[s.category] = [];
+                    categoryScores[s.category].push(s.score);
+                });
+                let bestCat = '';
+                let bestAvg = 0;
+                Object.entries(categoryScores).forEach(([cat, scores]) => {
+                    const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+                    if (avg > bestAvg) { bestAvg = avg; bestCat = cat; }
+                });
+                const catLabels = { vc: 'VC', consulting: 'Consulting', strategy: 'Strategy' };
+                document.getElementById('bestCategory').textContent = catLabels[bestCat] || '—';
+            }
+        }
+
+        // ==================== SCENARIOS ====================
+        function switchScenarioTab(tab, btn) {
+            document.querySelectorAll('#page-scenarios .tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById('scenario-' + tab).classList.add('active');
+            document.querySelectorAll('#page-scenarios .sub-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function switchResourceTab(tab, btn) {
+            document.querySelectorAll('#page-resources .tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById('resource-' + tab).classList.add('active');
+            document.querySelectorAll('#page-resources .sub-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function switchRoadmapTrack(track, btn) {
+            document.getElementById('roadmap-vc').style.display = track === 'vc' ? 'block' : 'none';
+            document.getElementById('roadmap-consulting').style.display = track === 'consulting' ? 'block' : 'none';
+            document.querySelectorAll('#page-roadmap .tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        // Scenario word counter
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.getElementById('scenarioAnswer');
+            if (textarea) {
+                textarea.value = state.scenarioDraft;
+                textarea.addEventListener('input', () => {
+                    const words = textarea.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+                    document.getElementById('scenarioWordCount').textContent = words + ' words';
+                });
+            }
+        });
+
+        function saveScenario() {
+            state.scenarioDraft = document.getElementById('scenarioAnswer').value;
+            saveState();
+            showToast('💾', 'Draft saved successfully!');
+        }
+
+        function submitScenario() {
+            const answer = document.getElementById('scenarioAnswer').value.trim();
+            if (answer.length < 50) {
+                showToast('⚠️', 'Please write at least 50 characters before submitting.');
+                return;
+            }
+
+            const words = answer.split(/\s+/).length;
+            const feedback = document.getElementById('scenarioFeedback');
+            const feedbackText = document.getElementById('scenarioFeedbackText');
+
+            let grade = '';
+            let tips = '';
+
+            if (words > 300) {
+                grade = '<span style="color:var(--accent-green);font-weight:600">Strong Analysis</span>';
+                tips = `<p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.7;margin-top:0.5rem">
+                    Great depth, Rajat! Your analysis covers multiple dimensions. Here's how to strengthen it further:
+                    <br><br>• <strong>Quantify your thesis:</strong> Include specific return scenarios (e.g., "At 10x exit in 5 years...")
+                    <br>• <strong>Risk mitigation:</strong> For each risk you identified, suggest how the company could address it
+                    <br>• <strong>Comparable analysis:</strong> Reference similar companies/exits in the health-tech space
+                    <br>• <strong>Your conviction level:</strong> Rate 1-10 and explain what would move it up or down
+                </p>`;
+            } else if (words > 100) {
+                grade = '<span style="color:var(--accent-gold);font-weight:600">Good Start</span>';
+                tips = `<p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.7;margin-top:0.5rem">
+                    Good foundation! To make this investment-committee ready:
+                    <br><br>• <strong>Go deeper on unit economics:</strong> Calculate implied valuation multiples and compare to benchmarks
+                    <br>• <strong>Team assessment:</strong> What specific team gaps concern you?
+                    <br>• <strong>Market timing:</strong> Why is now the right time for this company?
+                    <br>• <strong>Expand to 400+ words</strong> covering all 6 framework areas
+                </p>`;
+            } else {
+                grade = '<span style="color:var(--accent-orange);font-weight:600">Needs More Depth</span>';
+                tips = `<p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.7;margin-top:0.5rem">
+                    Keep going! An investment memo needs thorough analysis:
+                    <br><br>• <strong>Use the framework tags above</strong> as section headers
+                    <br>• <strong>For each data point</strong> in the table, explain what it tells you
+                    <br>• <strong>Compare metrics</strong> to industry benchmarks (e.g., is 72% gross margin good for health-tech?)
+                    <br>• <strong>Take a clear stance:</strong> Invest or Pass, then defend it
+                </p>`;
+            }
+
+            feedbackText.innerHTML = `${grade}${tips}`;
+            feedback.style.display = 'block';
+            showToast('📤', 'Analysis submitted! Check your feedback below.');
+        }
+
+        function startCaseStudy(type) {
+            showToast('🎯', `Starting ${type} case study. Use the timer for a timed session!`);
+            switchScenarioTab('weekly', document.querySelector('#page-scenarios .sub-tab'));
+        }
+
+        // ==================== MOCK INTERVIEW ====================
+        const interviewQuestions = [
+            {
+                type: 'BEHAVIORAL',
+                q: 'Why are you transitioning from Program Management to VC/Consulting?',
+                framework: `<h4 style="font-size:0.85rem;color:var(--accent-secondary);margin-bottom:0.5rem">💡 Recommended Framework: STAR + Bridge</h4>
+                <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6">
+                    <strong>Situation:</strong> Describe your current role impact<br>
+                    <strong>Task:</strong> What drove you to explore this transition<br>
+                    <strong>Action:</strong> Steps you've taken to prepare<br>
+                    <strong>Result:</strong> Why you're the right fit now<br>
+                    <strong>Bridge:</strong> Connect PM skills → VC/consulting value
+                </p>`
+            },
+            {
+                type: 'BEHAVIORAL',
+                q: 'Tell me about a time you influenced a decision without having direct authority.',
+                framework: `<h4 style="font-size:0.85rem;color:var(--accent-secondary);margin-bottom:0.5rem">💡 Framework: STAR Method</h4>
+                <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6">
+                    Focus on: 1) Stakeholder mapping, 2) Data-driven persuasion, 3) Building coalitions, 4) Quantifiable outcome. This is a KEY consulting skill — show you can drive change through influence, not hierarchy.
+                </p>`
+            },
+            {
+                type: 'CASE INTERVIEW',
+                q: 'How would you estimate the size of the Indian electric vehicle market by 2030?',
+                framework: `<h4 style="font-size:0.85rem;color:var(--accent-secondary);margin-bottom:0.5rem">💡 Framework: Top-Down + Bottom-Up Market Sizing</h4>
+                <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6">
+                    <strong>Top-down:</strong> India auto market × EV penetration rate projection<br>
+                    <strong>Bottom-up:</strong> # vehicles sold × avg price × growth rate<br>
+                    <strong>Key assumptions:</strong> Government policy, charging infrastructure, battery costs, consumer readiness<br>
+                    <strong>Sanity check:</strong> Compare with China's EV trajectory (3-5 years behind)
+                </p>`
+            },
+            {
+                type: 'CASE INTERVIEW',
+                q: 'A premium coffee chain\'s profits have dropped 30% despite flat revenue. Diagnose the problem.',
+                framework: `<h4 style="font-size:0.85rem;color:var(--accent-secondary);margin-bottom:0.5rem">💡 Framework: Profitability Tree</h4>
+                <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6">
+                    Revenue (flat) = Price × Volume → Check mix shift<br>
+                    Costs = Fixed (rent, salaries) + Variable (COGS, supplies)<br>
+                    Investigate: Input cost inflation, menu mix changes, new store openings diluting margins, operational inefficiency, competitive pricing pressure
+                </p>`
+            },
+            {
+                type: 'VC SPECIFIC',
+                q: 'What\'s a recent startup you would invest in and why?',
+                framework: `<h4 style="font-size:0.85rem;color:var(--accent-secondary);margin-bottom:0.5rem">💡 Framework: Investment Thesis Structure</h4>
+                <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6">
+                    1) <strong>Thesis:</strong> Why this market, why now<br>
+                    2) <strong>Traction:</strong> What metrics prove product-market fit<br>
+                    3) <strong>Team:</strong> Why this team can win<br>
+                    4) <strong>Moat:</strong> What's defensible<br>
+                    5) <strong>Return potential:</strong> Path to 10x+ return
+                </p>`
+            },
+            {
+                type: 'FIT',
+                q: 'What makes you uniquely suited for this role compared to traditional candidates?',
+                framework: `<h4 style="font-size:0.85rem;color:var(--accent-secondary);margin-bottom:0.5rem">💡 Framework: Unique Value Proposition</h4>
+                <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6">
+                    Leverage your non-traditional strengths:<br>
+                    • <strong>Operator mindset:</strong> You've been in the trenches at Founder's Office<br>
+                    • <strong>Cross-functional leadership:</strong> PM experience = stakeholder management<br>
+                    • <strong>Growth & Strategy:</strong> You've driven real business outcomes<br>
+                    • <strong>Diversity of thought:</strong> Non-traditional = fresh perspectives
+                </p>`
+            }
+        ];
+
+        function loadInterviewQ(index, btn) {
+            const q = interviewQuestions[index];
+            document.getElementById('interviewType').textContent = q.type;
+            document.getElementById('interviewQuestion').textContent = q.q;
+            document.getElementById('interviewFramework').innerHTML = q.framework;
+            document.getElementById('interviewAnswer').value = '';
+            document.getElementById('interviewFeedback').style.display = 'none';
+            
+            document.querySelectorAll('.interview-question-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function clearInterviewAnswer() {
+            document.getElementById('interviewAnswer').value = '';
+            document.getElementById('interviewFeedback').style.display = 'none';
+        }
+
+        function gradeInterviewAnswer() {
+            const answer = document.getElementById('interviewAnswer').value.trim();
+            if (answer.length < 30) {
+                showToast('⚠️', 'Please write a more detailed answer to get meaningful feedback.');
+                return;
+            }
+
+            const words = answer.split(/\s+/).length;
+            const feedback = document.getElementById('interviewFeedback');
+            
+            let grade, color, tips;
+            if (words > 150) {
+                grade = 'Strong Answer';
+                color = 'var(--accent-green)';
+                tips = 'Excellent depth! Make sure your answer stays under 2 minutes when spoken. Practice timing yourself. Focus on making your key points memorable — use specific numbers and outcomes.';
+            } else if (words > 60) {
+                grade = 'Good Foundation';
+                color = 'var(--accent-gold)';
+                tips = 'Good structure! Add more specificity: include numbers, timelines, and concrete examples. Interviewers remember stories, not generalizations. Try the "headline + detail" approach.';
+            } else {
+                grade = 'Needs Development';
+                color = 'var(--accent-orange)';
+                tips = 'Your answer needs more substance. Use the framework provided to structure your response. Aim for at least 150-200 words to demonstrate depth while remaining concise.';
+            }
+
+            feedback.innerHTML = `
+                <h4 style="color:${color};margin-bottom:0.5rem">📊 ${grade}</h4>
+                <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6">${tips}</p>
+                <div style="margin-top:1rem;display:flex;gap:1rem">
+                    <div style="text-align:center;padding:0.5rem 1rem;background:var(--bg-tertiary);border-radius:8px">
+                        <div style="font-weight:700;color:var(--accent-secondary)">${words}</div>
+                        <div style="font-size:0.7rem;color:var(--text-muted)">Words</div>
+                    </div>
+                    <div style="text-align:center;padding:0.5rem 1rem;background:var(--bg-tertiary);border-radius:8px">
+                        <div style="font-weight:700;color:var(--accent-secondary)">~${Math.ceil(words/130)}min</div>
+                        <div style="font-size:0.7rem;color:var(--text-muted)">Speaking Time</div>
+                    </div>
+                </div>
+            `;
+            feedback.style.display = 'block';
+        }
+
+        // ==================== CHECKLIST ====================
+        function toggleChecklist(item) {
+            item.classList.toggle('done');
+            const circle = item.querySelector('.checklist-circle');
+            circle.classList.toggle('checked');
+            
+            const index = Array.from(item.parentElement.querySelectorAll('.checklist-item')).indexOf(item);
+            state.checklistState[index] = item.classList.contains('done');
+            saveState();
+            
+            const completed = document.querySelectorAll('.checklist-item.done').length;
+            const total = document.querySelectorAll('.checklist-item').length;
+            
+            if (completed === total) {
+                showToast('🎉', 'All daily tasks complete! Amazing discipline, Rajat!');
+            }
+        }
+
+        function restoreChecklist() {
+            const items = document.querySelectorAll('.daily-checklist .checklist-item');
+            items.forEach((item, i) => {
+                if (state.checklistState[i]) {
+                    item.classList.add('done');
+                    item.querySelector('.checklist-circle').classList.add('checked');
+                }
+            });
+        }
+
+        // ==================== ROADMAP PROGRESS ====================
+        function updatePhaseProgress(checkbox) {
+            const phase = checkbox.closest('.roadmap-phase');
+            const checkboxes = phase.querySelectorAll('input[type="checkbox"]');
+            const checked = phase.querySelectorAll('input[type="checkbox"]:checked').length;
+            const total = checkboxes.length;
+            const pct = Math.round((checked / total) * 100);
+            
+            const progressFill = phase.querySelector('.phase-progress-fill');
+            progressFill.style.width = pct + '%';
+            
+            const pctDisplay = phase.querySelector('.phase-header span:last-child');
+            if (pctDisplay) pctDisplay.textContent = pct + '%';
+        }
+
+        // ==================== DASHBOARD STATS ====================
+        function updateDashboardStats() {
+            document.getElementById('stat-completed').textContent = state.completedTasks;
+            const hours = Math.round(state.focusMinutes / 60 * 10) / 10;
+            document.getElementById('stat-hours').textContent = hours;
+            document.getElementById('stat-quizzes').textContent = state.quizzesTaken;
+            document.getElementById('stat-streak').textContent = state.streak;
+        }
+
+        // ==================== WEEKLY COUNTDOWN ====================
+        function updateWeeklyCountdown() {
+            const now = new Date();
+            const nextMonday = new Date(now);
+            nextMonday.setDate(now.getDate() + ((8 - now.getDay()) % 7 || 7));
+            nextMonday.setHours(0, 0, 0, 0);
+            
+            const diff = nextMonday - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('weeklyCountdown').textContent = `${days}d ${hours}h ${mins}m`;
+            
+            const weekOfYear = Math.ceil((now - new Date(now.getFullYear(), 0, 1)) / (7 * 24 * 60 * 60 * 1000));
+            document.getElementById('currentWeekNum').textContent = weekOfYear;
+        }
+
+        // ==================== TOAST NOTIFICATION ====================
+        function showToast(icon, text) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastIcon').textContent = icon;
+            document.getElementById('toastText').textContent = text;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // ==================== INITIALIZATION ====================
+        function init() {
+            // Set today's date
+            const options = { weekday: 'long', month: 'short', day: 'numeric' };
+            document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', options);
+
+            // Initialize
+            updateStreak();
+            initDefaultTasks();
+            renderTasks();
+            updateDashboardStats();
+            updateQuizStats();
+            updateTimerDisplay();
+            restoreChecklist();
+            updateWeeklyCountdown();
+            setInterval(updateWeeklyCountdown, 60000);
+
+            // Restore scenario draft
+            if (state.scenarioDraft) {
+                document.getElementById('scenarioAnswer').value = state.scenarioDraft;
+                const words = state.scenarioDraft.trim().split(/\s+/).filter(w => w.length > 0).length;
+                document.getElementById('scenarioWordCount').textContent = words + ' words';
+            }
+
+            // Focus hours display
+            const hours = Math.floor(state.focusMinutes / 60);
+            const mins = state.focusMinutes % 60;
+            document.getElementById('totalFocusTime').textContent = `Total: ${hours}h ${mins}m`;
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
